@@ -1,0 +1,9 @@
+{
+    "boot": {
+        "components": "../components/boot/Boot.jsx",
+        "timeout": 2000
+    },
+    "main": {
+        "components": "../components/main/Main.jsx"
+    }
+}
