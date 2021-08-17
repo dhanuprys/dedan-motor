@@ -1,11 +1,28 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import styles from '../../styles/Home.module.css';
+import MobileNavbar from './MobileNavbar';
+import styles from './MobileView.module.css';
 
-export default function MobileView(props) {
+function BootUp() {
     return (
-        <div className={styles.container}>
-            <Image src="/dedanmotor.svg" width="300" height="300" />
+        <div className={styles.centerBox}>
+            <Image width="200" height="200" src="/dedanmotor.svg" />
         </div>
+    );
+}
+
+export default function MobileView() {
+    const [ bootState, setBootState ] = useState(false);
+
+    if (!bootState) {
+        setTimeout(() => {
+            setBootState(true);
+        }, 3000);
+
+        return <BootUp />;
+    }
+
+    return (
+        <MobileNavbar />
     );
 }
