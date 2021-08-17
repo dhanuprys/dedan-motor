@@ -6,7 +6,7 @@
     "dev": "electron .",
     "dev-mobile": "cross-env TEST_ENV=mobile electron .",
     "build": "next build",
-    "start": "cross-env NODE_ENV=production electron .",
+    "start": "next build && cross-env NODE_ENV=production electron .",
     "lint": "next lint"
   },
   "main": "./electron/app.js",
