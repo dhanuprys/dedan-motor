@@ -1,5 +1,6 @@
 const https = require('https');
 const fs = require('fs');
+const { env } = require('process');
 const express = require('express');
 const next = require('next');
 const { Server: WebSocketServer } = require('ws');
@@ -17,7 +18,7 @@ const expressServer = express();
 const httpsServer = https.createServer(credentials, expressServer);
 const wss = new WebSocketServer({ server: httpsServer });
 
-module.exports = function nextServer() {
+function nextServer() {
     console.log('Starting next server...');
     return new Promise(async (resolve, reject) => {
         try {
@@ -56,3 +57,10 @@ module.exports = function nextServer() {
         }
     });
 };
+
+// Standalone server
+if (env.SERVER_AUTO_START) {
+    nextServer();
+}
+
+module.exports = nextServer;
