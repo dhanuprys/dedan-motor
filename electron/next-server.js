@@ -59,7 +59,7 @@ function nextServer() {
 };
 
 // Standalone server
-if (env.SERVER_AUTO_START) {
+if (env.SERVER_AUTO_START !== undefined) {
     nextServer();
 }
 

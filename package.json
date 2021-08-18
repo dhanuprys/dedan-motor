@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "electron .",
+    "dev-server-only": "cross-env SERVER_AUTO_START=1 node ./electron/next-server.js",
     "dev-mobile": "cross-env TEST_ENV=mobile electron .",
     "build": "next build",
     "start": "next build && cross-env NODE_ENV=production electron .",
