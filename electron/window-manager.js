@@ -13,5 +13,5 @@ module.exports.createWindow = function createWindow(port) {
         }
     });
 
-    win.loadURL(isMobile ? url + 'mobile' : url);
+    win.loadURL(isMobile ? url + 'mobile/car' : url);
 }
